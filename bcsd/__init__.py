@@ -1,7 +1,8 @@
 import numpy as np
 
 
-def qmap_fit(x, y, steps=0.01, axis=None):
+def qmap_fit(x, y, step=0.01, axis=None):
+    steps = np.arange(0, 100, step)
     x_map = np.percentile(x, steps, axis=axis)
     y_map = np.percentile(y, steps, axis=axis)
     return x_map, y_map
